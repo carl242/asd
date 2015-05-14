@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+
+$(document).ready(function()
+{
+var hold = $('a[href*="ebay"]');
+var ebayPrefix = "http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575119228&toolid=10001&campid=5337662962&customid=&mpre=";
+	if(hold.length>0)
+	{
+		$(hold).each(function(index)
+		{
+		b=$(this).attr("href");
+			if(b.indexOf('rover') === -1)
+			{
+				alert("no rover found.");
+				newHfref=ebayPrefix+b;
+				alert(newHfref);
+				$(this).attr('href',newHfref);
+			}
+			else{alert("rover found skip");}
+		});
+	}
+});
+
+</script>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div id="one"><p class="intro">My name is Donald.</p></div>
+<p><a href="http://www.ebay/blah"> I </a>live in Duckburg.</p>
+<p><a href="http://rover.ebay.com">My</a> best friend is Mickey.</p>
+
+Who <a href="http://www.slayer.com">is</a> your favourite:
+<ul id="choose">
+  <li>Goofy</li>
+  <li>Mickey</li>
+  <li>Pluto</li>
+</ul>
+
+</body>
+</html>
